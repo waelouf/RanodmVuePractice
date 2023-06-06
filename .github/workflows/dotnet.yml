@@ -21,10 +21,10 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
-      working-directory: /WeatherApp/Backend/WeatherAppWebApi
+      run: dotnet restore WeatherApp.sln
+     # working-directory: /WeatherApp/Backend/WeatherAppWebApi
     - name: Build
-      run: dotnet build --no-restore
-      working-directory: /WeatherApp/Backend/WeatherAppWebApi
+      run: dotnet build --no-restore WeatherApp.sln
+      #working-directory: /WeatherApp/Backend/WeatherAppWebApi
     #- name: Test
       #run: dotnet test --no-build --verbosity normal
