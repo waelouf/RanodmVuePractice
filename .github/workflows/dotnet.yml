@@ -13,6 +13,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./WeatherApp/Backend/WeatherApp
 
     steps:
     - uses: actions/checkout@v3
@@ -22,9 +24,9 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ./WeatherApp/Backend/WeatherApp
+      working-directory: ${{env.working-directory}}
     - name: Build
       run: dotnet build --no-restore WeatherApp.sln
-      working-directory: ./WeatherApp/Backend/WeatherApp
+      working-directory: ${{env.working-directory}}
     #- name: Test
       #run: dotnet test --no-build --verbosity normal
