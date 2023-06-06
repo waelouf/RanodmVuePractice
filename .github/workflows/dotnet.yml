@@ -28,5 +28,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore WeatherApp.sln
       working-directory: ${{env.working-directory}}
-    #- name: Test
-      #run: dotnet test --no-build --verbosity normal
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      working-directory: ${{env.working-directory}}
