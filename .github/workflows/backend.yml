@@ -6,6 +6,8 @@ name: .NET
 on:
   push:
     branches: [ "main" ]
+    paths: 
+      - 'WeatherApp/Backend/**'
   pull_request:
     branches: [ "main" ]
 
