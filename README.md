@@ -5,6 +5,9 @@ Things to try
 ## Backend
 - Using minimal API ✔️
 - Using Result (language ext) ✔️
+- Use Polly 
+- Use FluentValidator
+- Using MediatR
 
 ## Frontend
 - Using Vite
