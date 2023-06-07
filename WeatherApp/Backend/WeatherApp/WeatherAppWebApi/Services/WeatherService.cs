@@ -1,6 +1,7 @@
 ﻿using LanguageExt.Common;
 using Newtonsoft.Json;
 using RestSharp;
+using WeatherAppWebApi.Abstracts;
 using WeatherAppWebApi.Entities;
 
 namespace WeatherAppWebApi.Services;
@@ -9,10 +10,12 @@ public class WeatherService : IWeatherService
 {
     private string apiKey = "";
 
-    public WeatherService()
+    private IConfigurationManager _configManager;
+
+    public WeatherService(IConfigurationManager configManager)
     {
-        var environmentVar = System.Environment.GetEnvironmentVariable("WeatherApi");
-        apiKey = environmentVar.ToString();
+        _configManager = configManager;
+        apiKey = _configManager.GetEnvironmentVariable("WeatherApi");
     }
 
     public Result<WeatherAlerts> GetAlert(string state)

@@ -1,6 +1,4 @@
-﻿using LanguageExt;
-using System.Reflection.Metadata.Ecma335;
-using WeatherAppWebApi.Entities;
+﻿using WeatherAppWebApi.Abstracts;
 using WeatherAppWebApi.Services;
 
 namespace WeatherAppWebApi.Endpoints;
@@ -29,6 +27,7 @@ public class WeatherEndpoint
 
     public void DefineService(IServiceCollection services)
     {
+        services.AddSingleton<IConfigurationManager, Utilities.ConfigurationManager>();
         services.AddSingleton<IWeatherService, WeatherService>();
     }
 }
