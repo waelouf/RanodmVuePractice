@@ -12,6 +12,7 @@ Things to try
 ## Frontend
 - Using Vite
 - Using Vuex 
+- Make PWA of this app
 
 ## DevOps
 - Create 2 pipelines for monorepo ✔️
