@@ -5,6 +5,7 @@ Things to try
 ## Backend
 - Using minimal API ✔️
 - Using Result (language ext) ✔️
+- Integrate with Auth0
 - Use Polly 
 - Use FluentValidator
 - Using MediatR
