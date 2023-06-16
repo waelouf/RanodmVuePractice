@@ -12,9 +12,9 @@ Things to try
 - Using MediatR
 
 ## Frontend
-- Create a simple Vue app that using the minimal API
+- Create a simple Vue app that using the minimal API ✔️
+- Using Vuex ✔️
 - Using Vite
-- Using Vuex 
 - Make PWA of this app
 
 ## DevOps
