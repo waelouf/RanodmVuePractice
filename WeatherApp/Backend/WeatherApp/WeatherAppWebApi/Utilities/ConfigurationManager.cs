@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using WeatherAppWebApi.Abstracts;
+﻿using WeatherAppWebApi.Abstracts;
 
 namespace WeatherAppWebApi.Utilities
 {
@@ -7,7 +6,12 @@ namespace WeatherAppWebApi.Utilities
     {
         public string GetEnvironmentVariable(string variableName)
         {
-            var environmentVar = System.Environment.GetEnvironmentVariable(variableName);
+            var environmentVar = Environment.GetEnvironmentVariable(variableName);
+            if(string.IsNullOrWhiteSpace(environmentVar))
+            {
+                throw new ApplicationException($"There is no value for the environment variable {variableName} on this server {Environment.MachineName} - {Environment.OSVersion}");
+            }
+
             return environmentVar.ToString();
         }
     }
