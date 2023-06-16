@@ -5,11 +5,13 @@ Things to try
 ## Backend
 - Using minimal API ✔️
 - Using Result (language ext) ✔️
+- Integrate with Auth0
 - Use Polly 
 - Use FluentValidator
 - Using MediatR
 
 ## Frontend
+- Create a simple Vue app that using the minimal API
 - Using Vite
 - Using Vuex 
 - Make PWA of this app
