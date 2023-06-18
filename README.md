@@ -12,13 +12,14 @@ Things to try
 - Using MediatR
 
 ## Frontend
-- Create a simple Vue app that using the minimal API
+- Create a simple Vue app that using the minimal API ✔️
+- Using Vuex ✔️
 - Using Vite
-- Using Vuex 
 - Make PWA of this app
 
 ## DevOps
 - Create 2 pipelines for monorepo ✔️
+- Use docker compose
 - Deploy from github to some cloud provider
 - Publish Docker image to dockerhub
 - Publish new image to a host
