@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    image: waelouf-playground/weather-app-api:latest
+    container_name: service-api
+    environment:
+      - WeatherApi=YOUR_API_KEY
+    ports:
+      - "80:80"
+      - "443:443"
+  web:
+    image: waelouf-playground/weather-app-vue:latest
+    container_name: frontend-vue
+    ports:
+      - "8080:8080"

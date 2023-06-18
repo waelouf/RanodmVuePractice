@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
   fetchWeatherData(city) {
-    const apiUrl = `http://localhost:5111?city=${city}`;
+    const apiUrl = `http://localhost?city=${city}`;
 
     return axios.get(apiUrl)
       .then(response => response.data)
