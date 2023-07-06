@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Weather Information</h2>
-    <input id="txtCity" v-model="city" @input="fetchWeatherData" />
+    <input id="txtCity" v-model="city" @keyup="onKeyUp" />
     <div v-if="weatherData">
       <h3>{{ weatherData.location.name }}, {{ weatherData.location.country }}</h3>
       <p>Temperature: {{ weatherData.currentWeather.temperatureCelsius }}°C</p>
@@ -20,26 +20,31 @@
   </div>
 </template>
 <script lang="js">
-import WeatherService from '../Services/WeatherService';
+import WeatherService from '../Services/WeatherService'
+import { debounce } from '../Utilities/Helper'
 
 export default {
   data() {
     return {
       weatherData: null,
+      debounceFn: null,
       city:'London'
-    };
+    }
   },
   methods: {
     async fetchWeatherData() {
       try {
-        this.weatherData = await WeatherService.fetchWeatherData(this.city);
+        this.weatherData = await WeatherService.fetchWeatherData(this.city)
       } catch (error) {
-        console.error('Error fetching weather data:', error);
+        console.error('Error fetching weather data:', error)
       }
     },
+    onKeyUp() {
+      this.debounceFn()
+    }
   },
   mounted() {
-    this.fetchWeatherData(this.city);
+    this.debounceFn = debounce(() => this.fetchWeatherData())
   },
-};
+}
 </script>
