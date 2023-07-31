@@ -9,7 +9,9 @@ Things to try
 - Integrate with Auth0
 - Use Polly 
 - Use FluentValidator
-- Using MediatR
+- Use MediatR
+- Use Serilog
+- Integrate ELK stack
 
 ## Frontend
 - Create a simple Vue app that using the minimal API ✔️
