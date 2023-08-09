@@ -21,6 +21,7 @@ namespace WeatherAppWebApi.Tests
         {
             // Arrange
             string city = "London";
+            WeatherDetails expectedDetails = new WeatherDetails(); // Add expected details here
 
             // Act
             Result<WeatherDetails> result = _weatherService.GetWeather(city);
@@ -29,6 +30,7 @@ namespace WeatherAppWebApi.Tests
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.Data);
+            Assert.AreEqual(expectedDetails, result.Data); // Verify the correctness of the returned data
         }
 
         [TestMethod]
@@ -36,6 +38,7 @@ namespace WeatherAppWebApi.Tests
         {
             // Arrange
             string state = "CA";
+            WeatherAlerts expectedAlerts = new WeatherAlerts(); // Add expected alerts here
 
             // Act
             Result<WeatherAlerts> result = _weatherService.GetAlert(state);
@@ -44,6 +47,7 @@ namespace WeatherAppWebApi.Tests
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.Data);
+            Assert.AreEqual(expectedAlerts, result.Data); // Verify the correctness of the returned data
         }
     }
 }
