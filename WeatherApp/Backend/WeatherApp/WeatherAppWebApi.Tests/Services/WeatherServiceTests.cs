@@ -33,5 +33,48 @@ namespace WeatherAppWebApi.Tests.Services
             Assert.True(result.IsSuccess);
             Assert.IsType<WeatherDetails>(result.Value);
         }
+
+        [Fact]
+        public void GetWeather_InvalidCity_ReturnsFailureResult()
+        {
+            // Arrange
+            var city = "InvalidCity";
+
+            // Act
+            var result = _weatherService.GetWeather(city);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public void GetWeather_NullOrEmptyCity_ReturnsFailureResult()
+        {
+            // Arrange
+            var city = "";
+
+            // Act
+            var result = _weatherService.GetWeather(city);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
+
+        [Fact]
+        public void GetWeather_ApiUnavailableOrError_ReturnsFailureResult()
+        {
+            // Arrange
+            var city = "London";
+            _mockConfigManager.Setup(m => m.GetEnvironmentVariable("WeatherApi")).Returns("InvalidApiKey");
+
+            // Act
+            var result = _weatherService.GetWeather(city);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.False(result.IsSuccess);
+        }
     }
 }
