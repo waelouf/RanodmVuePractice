@@ -1,16 +1,20 @@
+using Moq;
 using NUnit.Framework;
 using WeatherAppWebApi.Services;
+using WeatherAppWebApi.Abstracts;
 
 namespace WeatherAppWebApi.Tests
 {
     public class WeatherServiceTests
     {
         private WeatherService _weatherService;
+        private Mock<IConfigurationManager> _configManagerMock;
 
         [SetUp]
         public void Setup()
         {
-            _weatherService = new WeatherService();
+            _configManagerMock = new Mock<IConfigurationManager>();
+            _weatherService = new WeatherService(_configManagerMock.Object);
         }
 
         [Test]
