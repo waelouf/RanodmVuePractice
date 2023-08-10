@@ -1,3 +1,6 @@
+![Backend](https://github.com/waelouf/RanodmVuePractice/actions/workflows/backend.yml/badge.svg) 
+![Frontend](https://github.com/waelouf/RanodmVuePractice/actions/workflows/vue-app.yml/badge.svg) 
+
 # Waelouf's playground
 
 Things to try 
