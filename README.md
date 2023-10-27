@@ -21,6 +21,7 @@ Things to try
 - Using Vuex ✔️
 - Using Vite
 - Make PWA of this app
+- Try nx workspace
 
 ## DevOps
 - Create 2 pipelines for monorepo ✔️
