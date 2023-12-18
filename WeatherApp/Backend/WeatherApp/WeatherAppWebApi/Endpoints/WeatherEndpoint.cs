@@ -1,5 +1,6 @@
 ﻿using WeatherAppWebApi.Abstracts;
 using WeatherAppWebApi.Services;
+using IConfigurationManager = WeatherAppWebApi.Abstracts.IConfigurationManager;
 
 namespace WeatherAppWebApi.Endpoints;
 
