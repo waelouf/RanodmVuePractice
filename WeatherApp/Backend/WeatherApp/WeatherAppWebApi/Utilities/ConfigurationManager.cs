@@ -1,4 +1,5 @@
 ﻿using WeatherAppWebApi.Abstracts;
+using IConfigurationManager = WeatherAppWebApi.Abstracts.IConfigurationManager;
 
 namespace WeatherAppWebApi.Utilities
 {
