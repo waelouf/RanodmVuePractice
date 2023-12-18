@@ -1,4 +1,4 @@
-import { expect } from '@vue/test-utils';
+import { expect } from 'chai';
 import { mount } from '@vue/test-utils';
 import WeatherApp from '@/components/WeatherApp.vue';
 
