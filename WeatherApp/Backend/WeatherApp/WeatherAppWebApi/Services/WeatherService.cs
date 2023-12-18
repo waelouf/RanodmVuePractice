@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using WeatherAppWebApi.Abstracts;
 using WeatherAppWebApi.Entities;
+using IConfigurationManager = WeatherAppWebApi.Abstracts.IConfigurationManager;
 
 namespace WeatherAppWebApi.Services;
 
