@@ -9,7 +9,7 @@ pipeline {
 
     stage('build') {
       parallel {
-        stage('build') {
+        stage('build dotnet') {
           steps {
             sh '''cd WeatherApp/Backend/WeatherApp
 dotnet restore
@@ -17,9 +17,9 @@ dotnet dotnet build --no-restore WeatherApp.sln'''
           }
         }
 
-        stage('') {
+        stage('build vue') {
           steps {
-            sh '''cd /WeatherApp/vue-weather-app
+            sh '''cd WeatherApp/vue-weather-app
 npm ci
 npm run build --if-present'''
           }
@@ -30,14 +30,14 @@ npm run build --if-present'''
 
     stage('tests') {
       parallel {
-        stage('tests') {
+        stage('tests dotnet') {
           steps {
             sh '''cd WeatherApp/Backend/WeatherApp
 dotnet test --no-build --verbosity normal'''
           }
         }
 
-        stage('') {
+        stage('tests vue') {
           steps {
             sh '''cd /WeatherApp/vue-weather-app
 npm test'''
