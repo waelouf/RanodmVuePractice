@@ -14,7 +14,6 @@ pipeline {
             sh '''cd WeatherApp/Backend/WeatherApp
 dotnet restore
 dotnet dotnet build --no-restore WeatherApp.sln'''
-            dotnetBuild(configuration: 'release', framework: 'net8.0')
           }
         }
 
